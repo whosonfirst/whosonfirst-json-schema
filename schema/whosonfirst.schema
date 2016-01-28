@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Who's On First (WOF) document schema",
+    "description": "What is the Minimal Viable WOF document?",
+    "type": "object"
+    "properties": {
+    },
+    "required": [
+    ],
+}
