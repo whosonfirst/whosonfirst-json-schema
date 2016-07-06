@@ -62,6 +62,19 @@
 						},
 						"edtf:cessation": {
 							"type": "string"
+						},
+						"wof:lastmodified": {
+							"type": "integer"
+						},
+						"wof:geomhash": {
+							"type": "string"
+						},
+						"mz:is_current": {
+							"type": "integer",
+							"default": 1
+						},
+						"mz:categories": {
+							"type": "array"
 						}
 					},
 					"required": [
