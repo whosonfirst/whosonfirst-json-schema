@@ -25,7 +25,17 @@
 							"type": "string"
 						},
 						"wof:placetype": {
-							"type": "string"
+							"type": "string",
+							"default": "venue"
+						},
+						"geom:latitude": {
+							"type": "number"
+						},
+						"geom:longitude": {
+							"type": "number"
+						},
+						"geom:area": {
+							"type": "number"
 						},
 						"wof:country": {
 							"type": "string"
@@ -40,7 +50,10 @@
 							"type": "array"
 						},
 						"wof:supersedes": {
-							"type": "array"
+							"type": "array",
+							"items": {
+								"type": "integer"
+							}
 						},
 						"wof:superseded_by": {
 							"type": "array"
@@ -55,13 +68,16 @@
 							"type": "string"
 						},
 						"src:geom": {
-							"type": "string"
+							"type": "string",
+							"default": "mapzen"
 						},
 						"edtf:inception": {
-							"type": "string"
+							"type": "string",
+							"default": "uuuu"
 						},
 						"edtf:cessation": {
-							"type": "string"
+							"type": "string",
+							"default": "uuuu"
 						},
 						"wof:lastmodified": {
 							"type": "integer"
@@ -75,6 +91,12 @@
 						},
 						"mz:categories": {
 							"type": "array"
+						},
+						"addr:postcode": {
+							"type": "string"
+						},
+						"sg:postcode": {
+							"type": "string"
 						}
 					},
 					"required": [
@@ -82,7 +104,6 @@
 						"wof:parent_id",
 						"wof:name",
 						"wof:placetype",
-						"wof:country",
 						"wof:concordances",
 						"wof:hierarchy",
 						"wof:belongsto",
@@ -90,10 +111,10 @@
 						"wof:superseded_by",
 						"wof:breaches",
 						"wof:tags",
-						"iso:country",
 						"src:geom",
 						"edtf:inception",
-						"edtf:cessation"
+						"edtf:cessation",
+						"mz:is_current"
 					]
 				}
 			},
