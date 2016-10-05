@@ -1,6 +1,6 @@
 # whosonfirst-json-schema
 
-EXPERIMENTAL JSON Schema definitions for Who's On First documents
+JSON Schema definitions for Who's On First documents
 
 ## See also
 
