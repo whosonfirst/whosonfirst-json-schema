@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "id": "wof-hierarchy.json#",
+	"definitions": {
+		"wof-hierarchy": {
+			"description": "The Whosonfirst administrative hierarchy",
+            "type": "object",
+            "properties": {
+                "continent_id": {
+                    "type": "integer"
+                },
+                "country_id": {
+                    "type": "integer"
+                },
+                "locality_id": {
+                    "type": "integer"
+                },
+                "macroregion_id": {
+                    "type": "integer"
+                },
+                "region_id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "continent_id", "country_id", "locality_id", "macroregion_id", "region_id"
+            ]
+		}
+	}
+}

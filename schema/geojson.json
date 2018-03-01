@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "id": "geojson.json#",
+    "title": "Minimal GeoJSON document schema",
+    "description": "What is the Minimal Viable GeoJSON document?",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "Feature"
+            ]
+        },
+        "properties": {
+            "type": "object"
+        },
+        "bbox": {
+            "$ref": "bbox.json#/definitions/bbox"
+        },
+        "geometry": {
+            "$ref": "geometry.json#/definitions/geometry"
+        }
+    },
+    "required": [
+        "type",
+        "geometry"
+    ]
+}
