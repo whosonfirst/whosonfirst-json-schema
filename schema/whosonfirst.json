@@ -48,6 +48,13 @@
                 "wof:id": {
                     "type": "integer"
                 },
+                "wof:lang": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[a-z]{3}$"
+                    }
+                },
                 "wof:lastmodified": {
                     "type": "integer"
                 },
@@ -233,7 +240,10 @@
                     "pattern": "^[A-Z]{2}$"
                 },
                 "ne:UN_ADM0": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "ne:UN_FID": {
                     "type": "integer"
@@ -269,7 +279,10 @@
                     ]
                 },
                 "ne:MEGANAME": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "ne:LATITUDE": {
                     "type": "number"
@@ -319,6 +332,9 @@
                 "ne:WORLDCITY": {
                     "type": "number"
                 },
+                "qs:id": {
+                    "type": "number"
+                },
                 "qs:pop": {
                     "type": "number"
                 },
@@ -351,6 +367,12 @@
                 },
                 "src:population": {
                     "type": "string"
+                },
+                "wk:latitude": {
+                    "type": "number"
+                },
+                "wk:longitude": {
+                    "type": "number"
                 },
                 "wk:wordcount": {
                     "type": "integer"
