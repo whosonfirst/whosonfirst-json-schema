@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "id": "whosonfirst.json#",
+    "$id": "whosonfirst.json",
     "title": "Who's On First (WOF) document schema",
     "description": "What is the Minimal Viable WOF document?",
     "type": "object",

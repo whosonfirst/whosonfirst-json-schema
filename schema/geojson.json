@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "id": "geojson.json#",
+    "$id": "geojson.json#",
     "title": "Minimal GeoJSON document schema",
     "description": "What is the Minimal Viable GeoJSON document?",
     "type": "object",
