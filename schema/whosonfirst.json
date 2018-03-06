@@ -58,6 +58,13 @@
                 "wof:lastmodified": {
                     "type": "integer"
                 },
+                "wof:megacity": {
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
                 "wof:name": {
                     "type": "string"
                 },
@@ -124,6 +131,9 @@
                 "geonames:id": {
                     "type": "string"
                 },
+                "gn:elevation": {
+                    "type": "integer"
+                },
                 "gn:population": {
                     "type": "integer"
                 },
@@ -154,6 +164,9 @@
                 },
                 "mz:is_funky": {
                     "type": "integer"
+                },
+                "mz:max_zoom": {
+                    "type": "number"
                 },
                 "mz:min_zoom": {
                     "type": "number"
@@ -368,18 +381,27 @@
                 "src:population": {
                     "type": "string"
                 },
+                "wk:area": {
+                    "type": "number"
+                },
+                "wk:elevation": {
+                    "type": "number"
+                },
                 "wk:latitude": {
                     "type": "number"
                 },
                 "wk:longitude": {
                     "type": "number"
                 },
+                "wk:population": {
+                    "type": "integer"
+                },
                 "wk:wordcount": {
                     "type": "integer"
                 }
             },
             "patternProperties": {
-                "^name:.*_x_(preferred|variant)$": {
+                "^name:.*_x_(preferred|variant|colloquial|historical)$": {
                     "type": "array",
                     "items": {
                         "type": "string"
