@@ -17,6 +17,9 @@
         "properties": {
             "type": "object",
             "properties": {
+                "wof:abbreviation": {
+                    "type": "string"
+                },
                 "wof:belongsto": {
                     "type": "array",
                     "items": {
@@ -59,11 +62,8 @@
                     "type": "integer"
                 },
                 "wof:megacity": {
-                    "type": "integer",
-                    "enum": [
-                        0,
-                        1
-                    ]
+                    "type": "string",
+                    "pattern": "^[0-9]$"
                 },
                 "wof:name": {
                     "type": "string"
@@ -88,6 +88,9 @@
                 "wof:repo": {
                     "type": "string",
                     "pattern": "^whosonfirst-.*$"
+                },
+                "wof:scale": {
+                    "type": "string"
                 },
                 "wof:supersedes": {
                     "type": "array",
@@ -275,11 +278,7 @@
                     "pattern": "^[A-Z]{3}$"
                 },
                 "ne:LS_MATCH": {
-                    "type": "integer",
-                    "enum": [
-                        0,
-                        1
-                    ]
+                    "type": "integer"
                 },
                 "ne:LS_NAME": {
                     "type": "string"
@@ -401,6 +400,12 @@
                 }
             },
             "patternProperties": {
+                "^abrv:.*_x_(preferred|variant|colloquial|historical)$": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "^name:.*_x_(preferred|variant|colloquial|historical)$": {
                     "type": "array",
                     "items": {
@@ -428,6 +433,9 @@
                 "^ne:RANK_(MIN|MAX)": {
                     "type": "integer"
                 },
+                "^ne:[a-z]{1}[a-z_0-9]{1,}$": {
+                    "type": "string"
+                },
                 "^qs:(a|l).*$": {
                     "type": "string"
                 }
@@ -446,8 +454,7 @@
                 "wof:tags",
                 "src:geom",
                 "edtf:inception",
-                "edtf:cessation",
-                "mz:is_current"
+                "edtf:cessation"
             ],
             "additionalProperties": false
         },
