@@ -7,19 +7,24 @@
             "type": "object",
             "properties": {
                 "continent_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "default": -1
                 },
                 "country_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "default": -1
                 },
                 "locality_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "default": -1
                 },
                 "macroregion_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "default": -1
                 },
                 "region_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "default": -1
                 }
             },
             "required": [

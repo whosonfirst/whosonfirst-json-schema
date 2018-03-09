@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "whosonfirst-alt.json",
+    "title": "Who's On First (WOF) alternate document schema",
+    "description": "Defines the JSON schema for WOF documents named 'wofid'-alt-*.geojson",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "Feature"
+            ]
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "wof:geomhash": {
+                    "type": "string"
+                },
+                "wof:id": {
+                    "type": "integer"
+                },
+                "src:geom": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "wof:id",
+                "wof:geomhash",
+                "src:geom"
+            ],
+            "additionalProperties": false
+        },
+        "bbox": {
+            "$ref": "geojson-bbox.json#/definitions/bbox"
+        },
+        "geometry": {
+            "$ref": "geojson-geometry.json#/definitions/geometry"
+        }
+    },
+    "required": [
+        "id",
+        "type",
+        "properties",
+        "bbox",
+        "geometry"
+    ]
+}
