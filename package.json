@@ -2,9 +2,8 @@
     "name": "whosonfirst-json-schema",
     "version": "1.0.0",
     "description": "Scripts for working with Who's On First JSON schemas",
-    "main": "wofdoc.js",
+    "main": "bin/wof-validate",
     "scripts": {
-        "wofdoc": "./wofdoc.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
