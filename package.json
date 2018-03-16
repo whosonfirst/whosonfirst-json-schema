@@ -29,9 +29,6 @@
     "dependencies": {
         "ajv": "^6.2.1",
         "command-line-args": "^5.0.2",
-        "command-line-usage": "^4.1.0",
-        "deep-equal": "^1.0.1",
-        "json-bigint": "^0.2.3",
-        "pretty-json-stringify": "0.0.2"
+        "command-line-usage": "^4.1.0"
     }
 }
