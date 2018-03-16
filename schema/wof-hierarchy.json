@@ -26,10 +26,7 @@
                     "type": "integer",
                     "default": -1
                 }
-            },
-            "required": [
-                "continent_id", "country_id", "locality_id", "macroregion_id", "region_id"
-            ]
+            }
 		}
 	}
 }
