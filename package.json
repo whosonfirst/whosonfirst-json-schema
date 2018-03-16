@@ -2,7 +2,7 @@
     "name": "whosonfirst-json-schema",
     "version": "1.0.0",
     "description": "Scripts for working with Who's On First JSON schemas",
-    "main": "bin/wof-validate",
+    "main": "scripts/wof-validate",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -17,8 +17,7 @@
         "json",
         "schema",
         "check",
-        "validate",
-        "fix"
+        "validate"
     ],
     "author": "Gary Gale <gary@vicchi.org>",
     "license": "BSD-3-Clause",
