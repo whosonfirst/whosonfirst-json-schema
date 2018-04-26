@@ -52,7 +52,10 @@
           "type": "string"
         }, 
         "wof:category": {
-          "type": "string"
+          "type": "array", 
+          "items": {
+            "type": "string"
+          }
         }, 
         "wof:children": {
           "type": "array", 
@@ -112,13 +115,16 @@
         }, 
         "wof:country": {
           "type": "string", 
-          "pattern": "^[A-Z]{2}$"
+          "pattern": "^$|^[A-Za-z]{2}$|-99|-1"
         }, 
         "wof:country_alpha3": {
           "type": "string"
         }, 
         "wof:created": {
-          "type": "integer"
+          "type": [
+            "integer", 
+            "null"
+          ]
         }, 
         "wof:fullname": {
           "type": "string"
@@ -181,11 +187,13 @@
           "type": "integer"
         }, 
         "wof:megacity": {
-          "type": "string", 
-          "pattern": "^[0-9]$"
+          "type": "integer"
         }, 
         "wof:name": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "wof:parent_id": {
           "type": "integer"
@@ -197,7 +205,10 @@
           "type": "string"
         }, 
         "wof:placetype_alt": {
-          "type": "string"
+          "type": "array", 
+          "items": {
+            "type": "string"
+          }
         }, 
         "wof:placetype_id": {
           "type": "string"
@@ -219,7 +230,7 @@
           "pattern": "^whosonfirst-.*$"
         }, 
         "wof:scale": {
-          "type": "string"
+          "type": "integer"
         }, 
         "wof:shortcode": {
           "type": "string"
@@ -540,13 +551,16 @@
           "type": "string"
         }, 
         "begov:numac": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "begov:oidn": {
           "type": "string"
         }, 
         "begov:oppervl": {
-          "type": "string"
+          "type": "number"
         }, 
         "begov:PZ_ID": {
           "type": "string"
@@ -1003,7 +1017,7 @@
         }, 
         "geom:bbox": {
           "type": "string", 
-          "pattern": "^([-+]?[0-9]*.?[0-9]+),([-+]?[0-9]*.?[0-9]+),([-+]?[0-9]*.?[0-9]+),([-+]?[0-9]*.?[0-9]+)$"
+          "pattern": "^([-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?),([-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?),([-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?),([-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?)$"
         }, 
         "geom:hash": {
           "type": "string"
@@ -1054,7 +1068,10 @@
           "type": "string"
         }, 
         "gn:gn_country": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "gn:gn_fcode": {
           "type": "string"
@@ -1084,7 +1101,7 @@
           "type": "number"
         }, 
         "gp:adm0": {
-          "type": "string"
+          "type": "integer"
         }, 
         "gp:id": {
           "type": "integer"
@@ -1166,7 +1183,7 @@
         }, 
         "iso:country": {
           "type": "string", 
-          "pattern": "^[A-Z]{2}$"
+          "pattern": "^$|^[A-Za-z]{2}$|-99|-1"
         }, 
         "iso:parent": {
           "type": "string"
@@ -1322,7 +1339,10 @@
           "type": "string"
         }, 
         "meso:admin1r_en": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:admin2name": {
           "type": "string"
@@ -1337,7 +1357,10 @@
           "type": "string"
         }, 
         "meso:admin_1r": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:admin_2": {
           "type": "string"
@@ -1358,7 +1381,10 @@
           "type": "string"
         }, 
         "meso:diss_me": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:dissme": {
           "type": "string"
@@ -1382,10 +1408,16 @@
           "type": "string"
         }, 
         "meso:gadm_alt": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:gadm_cyril": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:gadm_hasc": {
           "type": "string"
@@ -1430,7 +1462,10 @@
           "type": "string"
         }, 
         "meso:hasc_id": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:id": {
           "type": "string"
@@ -1445,7 +1480,7 @@
           "type": "string"
         }, 
         "meso:local_id": {
-          "type": "integer"
+          "type": "string"
         }, 
         "meso:local_id_a": {
           "type": "string"
@@ -1478,7 +1513,10 @@
           "type": "string"
         }, 
         "meso:name_lat": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:name_loc": {
           "type": "string"
@@ -1517,16 +1555,28 @@
           "type": "string"
         }, 
         "meso:okato_code": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:okato_name": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:oktmo_code": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:oktmo_name": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "meso:osm_adm2": {
           "type": "string"
@@ -1571,7 +1621,7 @@
           "type": "integer"
         }, 
         "misc:gn_local": {
-          "type": "string"
+          "type": "integer"
         }, 
         "misc:gn_nam_loc": {
           "type": "string"
@@ -1625,25 +1675,43 @@
           "type": "string"
         }, 
         "misc:qs_a0_lc": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_a1": {
           "type": "string"
         }, 
         "misc:qs_a1_alt": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_a1_lc": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_a1r": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_a1r_alt": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_a1r_lc": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_adm0": {
           "type": "string"
@@ -1652,10 +1720,16 @@
           "type": "string"
         }, 
         "misc:qs_gn_id": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_id": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_iso_cc": {
           "type": "string"
@@ -1664,10 +1738,16 @@
           "type": "string"
         }, 
         "misc:qs_pop": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_scale": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:qs_source": {
           "type": "string"
@@ -1676,7 +1756,10 @@
           "type": "string"
         }, 
         "misc:qs_woe_id": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "misc:quad_count": {
           "type": "integer"
@@ -1700,7 +1783,7 @@
           "type": "integer"
         }, 
         "misc:woe_ver": {
-          "type": "integer"
+          "type": "string"
         }, 
         "misc:woeid": {
           "type": "integer"
@@ -1724,7 +1807,10 @@
           "type": "integer"
         }, 
         "mz:hours": {
-          "type": "string"
+          "type": "array", 
+          "items": {
+            "type": "string"
+          }
         }, 
         "mz:is_approximate": {
           "type": "integer"
@@ -1784,7 +1870,7 @@
           "type": "string"
         }, 
         "ne:abbrev_len": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:ADM0_A3": {
           "type": "string", 
@@ -1794,16 +1880,16 @@
           "type": "string"
         }, 
         "ne:adm0_a3_un": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:adm0_a3_us": {
           "type": "string"
         }, 
         "ne:adm0_a3_wb": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:adm0_dif": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:adm0_label": {
           "type": "string"
@@ -1812,7 +1898,7 @@
           "type": "string"
         }, 
         "ne:ADM0CAP": {
-          "type": "string"
+          "type": "number"
         }, 
         "ne:ADM0NAME": {
           "type": "string"
@@ -1824,7 +1910,10 @@
           "type": "string"
         }, 
         "ne:ADM1NAME": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:admin": {
           "type": "string"
@@ -1839,10 +1928,13 @@
           "type": "string"
         }, 
         "ne:brk_diff": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:brk_group": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:brk_name": {
           "type": "string"
@@ -1851,7 +1943,10 @@
           "type": "number"
         }, 
         "ne:CAPIN": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:CHANGED": {
           "type": "number"
@@ -1863,7 +1958,10 @@
           "type": "integer"
         }, 
         "ne:CITYALT": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:code_hasc": {
           "type": "string"
@@ -1884,7 +1982,10 @@
           "type": "integer"
         }, 
         "ne:DIFFNOTE": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:diss_me": {
           "type": "string"
@@ -1896,10 +1997,16 @@
           "type": "number"
         }, 
         "ne:FEATURE_CL": {
-          "type": "number"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:FEATURE_CO": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:FEATURECLA": {
           "type": "string"
@@ -1908,7 +2015,10 @@
           "type": "string"
         }, 
         "ne:fips_10": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:fips_10_": {
           "type": "string"
@@ -1917,10 +2027,16 @@
           "type": "string"
         }, 
         "ne:formal_en": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:formal_fr": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:gadm_level": {
           "type": "string"
@@ -1935,13 +2051,16 @@
           "type": "number"
         }, 
         "ne:GEONAMESNO": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:geonunit": {
           "type": "string"
         }, 
         "ne:geou_dif": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:geounit": {
           "type": "string"
@@ -1950,7 +2069,10 @@
           "type": "string"
         }, 
         "ne:GN_ASCII": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:gn_id": {
           "type": "string"
@@ -1995,7 +2117,7 @@
           "type": "string"
         }, 
         "ne:homepart": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:income_grp": {
           "type": "string"
@@ -2005,7 +2127,7 @@
         }, 
         "ne:ISO_A2": {
           "type": "string", 
-          "pattern": "^[A-Z]{2}$"
+          "pattern": "^$|^[A-Za-z]{2}$|-99|-1"
         }, 
         "ne:iso_a3": {
           "type": "string"
@@ -2017,16 +2139,16 @@
           "type": "integer"
         }, 
         "ne:lastcensus": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:LATITUDE": {
           "type": "number"
         }, 
         "ne:level": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:long_len": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:LONGITUDE": {
           "type": "number"
@@ -2035,22 +2157,25 @@
           "type": "integer"
         }, 
         "ne:LS_NAME": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:map_color": {
-          "type": "string"
+          "type": "number"
         }, 
         "ne:mapcolor13": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:mapcolor7": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:mapcolor8": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:mapcolor9": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:MAX_AREAKM": {
           "type": "number"
@@ -2104,7 +2229,10 @@
           "type": "integer"
         }, 
         "ne:MEGANAME": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:MIN_AREAKM": {
           "type": "number"
@@ -2131,22 +2259,31 @@
           "type": "number"
         }, 
         "ne:min_zoom": {
-          "type": "string"
+          "type": "number"
         }, 
         "ne:NAME": {
           "type": "string"
         }, 
         "ne:name_alt": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:name_forma": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:name_fr": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:name_len": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:name_local": {
           "type": "string"
@@ -2158,7 +2295,10 @@
           "type": "string"
         }, 
         "ne:NAMEALT": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:NAMEASCII": {
           "type": "string"
@@ -2167,7 +2307,10 @@
           "type": "integer"
         }, 
         "ne:NAMEPAR": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:NATSCALE": {
           "type": "integer"
@@ -2176,16 +2319,25 @@
           "type": "string"
         }, 
         "ne:NOTE": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:note_adm0": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:note_brk": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:oid_": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:POP1950": {
           "type": "number"
@@ -2239,7 +2391,7 @@
           "type": "number"
         }, 
         "ne:pop_est": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:POP_MAX": {
           "type": "integer"
@@ -2251,7 +2403,7 @@
           "type": "integer"
         }, 
         "ne:pop_year": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:postal": {
           "type": "string"
@@ -2291,7 +2443,7 @@
         }, 
         "ne:SOV_A3": {
           "type": "string", 
-          "pattern": "^[A-Z]{3}$"
+          "pattern": "^$|^[A-Za-z1-9]{2,3}$|-99|-1"
         }, 
         "ne:sovereignt": {
           "type": "string"
@@ -2300,25 +2452,34 @@
           "type": "string"
         }, 
         "ne:su_dif": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:sub_code": {
           "type": "string"
         }, 
         "ne:subregion": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:subunit": {
           "type": "string"
         }, 
         "ne:terr_": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:TIMEZONE": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:tiny": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:type": {
           "type": "string"
@@ -2330,7 +2491,10 @@
           "type": "string"
         }, 
         "ne:UN_ADM0": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "ne:UN_FID": {
           "type": "integer"
@@ -2531,16 +2695,28 @@
           "type": "string"
         }, 
         "qs:gn_country": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "qs:gn_fcode": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "qs:gn_id": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "qs:gn_pop": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "qs:id": {
           "type": "integer"
@@ -2573,22 +2749,25 @@
           "type": "string"
         }, 
         "qs:name_adm1": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "qs:photos": {
           "type": "string"
         }, 
         "qs:photos_1k": {
-          "type": "number"
+          "type": "string"
         }, 
         "qs:photos_9k": {
-          "type": "number"
+          "type": "string"
         }, 
         "qs:photos_9r": {
-          "type": "number"
+          "type": "string"
         }, 
         "qs:photos_all": {
-          "type": "integer"
+          "type": "string"
         }, 
         "qs:photos_sr": {
           "type": "string"
@@ -2603,10 +2782,10 @@
           "type": "string"
         }, 
         "qs:qs_id": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:scale": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:source": {
           "type": "string"
@@ -2615,16 +2794,19 @@
           "type": "string"
         }, 
         "qs:woe_adm0": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:woe_id": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs_pg:aaroncc": {
           "type": "string"
         }, 
         "qs_pg:gn_country": {
-          "type": "string"
+          "type": [
+            "string", 
+            "null"
+          ]
         }, 
         "qs_pg:gn_fcode": {
           "type": "string"
@@ -2800,7 +2982,18 @@
         "sg:classifiers": {
           "type": "array", 
           "items": {
-            "type": "string"
+            "type": "object", 
+            "properties": {
+              "category": {
+                "type": "string"
+              }, 
+              "type": {
+                "type": "string"
+              }, 
+              "subcategory": {
+                "type": "string"
+              }
+            }
           }
         }, 
         "sg:href": {
@@ -2846,7 +3039,10 @@
           "type": "string"
         }, 
         "src:geom_alt": {
-          "type": "string"
+          "type": "array", 
+          "items": {
+            "type": "string"
+          }
         }, 
         "src:lbl": {
           "type": "string"
@@ -3056,10 +3252,10 @@
           "type": "string"
         }, 
         "wk:area": {
-          "type": "string"
+          "type": "number"
         }, 
         "wk:elevation": {
-          "type": "string"
+          "type": "number"
         }, 
         "wk:lat": {
           "type": "string"
@@ -3074,10 +3270,10 @@
           "type": "number"
         }, 
         "wk:population": {
-          "type": "string"
+          "type": "number"
         }, 
         "wk:wordcount": {
-          "type": "string"
+          "type": "integer"
         }, 
         "woe:adm0_id": {
           "type": "integer"
