@@ -1919,7 +1919,7 @@
           "type": "string"
         }, 
         "ne:ADMIN1_COD": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:area_sqkm": {
           "type": "string"
@@ -1940,7 +1940,7 @@
           "type": "string"
         }, 
         "ne:CAPALT": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:CAPIN": {
           "type": [
@@ -1949,7 +1949,7 @@
           ]
         }, 
         "ne:CHANGED": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:check_me": {
           "type": "string"
@@ -2048,7 +2048,7 @@
           "type": "string"
         }, 
         "ne:GEONAMEID": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:GEONAMESNO": {
           "type": [
@@ -2084,7 +2084,7 @@
           "type": "string"
         }, 
         "ne:GN_POP": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:gn_region": {
           "type": "string"
@@ -2205,19 +2205,19 @@
           "type": "number"
         }, 
         "ne:MAX_POP10": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:MAX_POP20": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:MAX_POP300": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:MAX_POP310": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:MAX_POP50": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:MEAN_BBXC": {
           "type": "number"
@@ -2340,55 +2340,55 @@
           "type": "integer"
         }, 
         "ne:POP1950": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1955": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1960": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1965": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1970": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1975": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1980": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1985": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1990": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP1995": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2000": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2005": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2010": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2015": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2020": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2025": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:POP2050": {
-          "type": "number"
+          "type": "integer"
         }, 
         "ne:pop_est": {
           "type": "integer"
@@ -2443,7 +2443,7 @@
         }, 
         "ne:SOV_A3": {
           "type": "string", 
-          "pattern": "^$|^[A-Za-z1-9]{2,3}$|-99|-1"
+          "pattern": "^$|^[A-Za-z1-9]{3}$|-99|-1"
         }, 
         "ne:sovereignt": {
           "type": "string"
@@ -2494,7 +2494,8 @@
           "type": [
             "string", 
             "null"
-          ]
+          ], 
+          "pattern": "^$|^[A-Za-z1-9]{3}$|-99|-1"
         }, 
         "ne:UN_FID": {
           "type": "integer"
@@ -2530,7 +2531,7 @@
           "type": "string"
         }, 
         "ne:WORLDCITY": {
-          "type": "number"
+          "type": "integer"
         }, 
         "nolagis:gnocdc_lab": {
           "type": "string"
