@@ -2494,8 +2494,7 @@
           "type": [
             "string", 
             "null"
-          ], 
-          "pattern": "^$|^[A-Za-z1-9]{3}$|-99|-1"
+          ]
         }, 
         "ne:UN_FID": {
           "type": "integer"
