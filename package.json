@@ -1,0 +1,33 @@
+{
+    "name": "whosonfirst-json-schema",
+    "version": "1.0.0",
+    "description": "Scripts for working with Who's On First JSON schemas",
+    "main": "scripts/wof-validate",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/whosonfirst/whosonfirst-json-schema.git"
+    },
+    "keywords": [
+        "node",
+        "wof",
+        "whosonfirst",
+        "json",
+        "schema",
+        "check",
+        "validate"
+    ],
+    "author": "Gary Gale <gary@vicchi.org>",
+    "license": "BSD-3-Clause",
+    "bugs": {
+        "url": "https://github.com/whosonfirst/whosonfirst-json-schema/issues"
+    },
+    "homepage": "https://github.com/whosonfirst/whosonfirst-json-schema#readme",
+    "dependencies": {
+        "ajv": "^6.2.1",
+        "command-line-args": "^5.0.2",
+        "command-line-usage": "^4.1.0"
+    }
+}
