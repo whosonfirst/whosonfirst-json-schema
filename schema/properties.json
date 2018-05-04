@@ -1092,7 +1092,7 @@
           "type": "string"
         }, 
         "gn:pop": {
-          "type": "string"
+          "type": "integer"
         }, 
         "gn:population": {
           "type": "integer"
@@ -1585,7 +1585,7 @@
           "type": "integer"
         }, 
         "meso:pop": {
-          "type": "string"
+          "type": "integer"
         }, 
         "meso:pop_year": {
           "type": "string"
@@ -2042,10 +2042,10 @@
           "type": "string"
         }, 
         "ne:gdp_md_est": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:gdp_year": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:GEONAMEID": {
           "type": "integer"
@@ -2133,7 +2133,7 @@
           "type": "string"
         }, 
         "ne:iso_n3": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:LABELRANK": {
           "type": "integer"
@@ -2515,10 +2515,10 @@
           "type": "string"
         }, 
         "ne:woe_id": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:woe_id_eh": {
-          "type": "string"
+          "type": "integer"
         }, 
         "ne:woe_label": {
           "type": "string"
@@ -2707,16 +2707,10 @@
           ]
         }, 
         "qs:gn_id": {
-          "type": [
-            "string", 
-            "null"
-          ]
+          "type": "integer"
         }, 
         "qs:gn_pop": {
-          "type": [
-            "string", 
-            "null"
-          ]
+          "type": "integer"
         }, 
         "qs:id": {
           "type": "integer"
@@ -2755,22 +2749,22 @@
           ]
         }, 
         "qs:photos": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:photos_1k": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:photos_9k": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:photos_9r": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:photos_all": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:photos_sr": {
-          "type": "string"
+          "type": "integer"
         }, 
         "qs:placetype": {
           "type": "string"
