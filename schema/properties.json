@@ -167,19 +167,21 @@
         "wof:lang": {
           "type": "array", 
           "items": {
+            "pattern": "^[a-z]{3}$", 
             "type": "string"
-          }, 
-          "pattern": "^[a-z]{3}$"
+          }
         }, 
         "wof:lang_x_official": {
           "type": "array", 
           "items": {
+            "pattern": "^[a-z]{3}$", 
             "type": "string"
           }
         }, 
         "wof:lang_x_spoken": {
           "type": "array", 
           "items": {
+            "pattern": "^[a-z]{3}$", 
             "type": "string"
           }
         }, 
