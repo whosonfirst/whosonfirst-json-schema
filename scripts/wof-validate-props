@@ -1,0 +1,75 @@
+#!/usr/bin/env node
+/* jshint esversion: 6 */
+'use strict';
+
+const util = require('util');
+
+const CommandLineArgs = require('command-line-args');
+const CommandLineUsage = require('command-line-usage');
+
+const DocumentCheck = require('./../lib/whosonfirst/document_check');
+
+const APPNAME = 'wof-validate-props';
+
+const optionDefs = [
+    {
+        name: 'dir',
+        alias: 'd',
+        type: String,
+        defaultOption: true,
+        description: 'The directory to check for WOF property definition files',
+        typeLabel: '<dir>'
+    },
+    {
+        name: 'pattern',
+        alias: 'p',
+        type: String,
+        defaultValue: '.*\.json$',
+        description: 'Regex to match candidate files (defaults to matching all JSON documents)',
+        typeLabel: '[regex]'
+    },
+    {
+        name: 'schema',
+        alias: 's',
+        type: String,
+        description: 'Path to the top level schema file',
+        typeLabel: '<file>'
+    },
+    {
+        name: 'help',
+        alias: 'h',
+        type: Boolean,
+        description: 'Display this usage guide'
+    },
+    {
+        name: 'verbose',
+        alias: 'v',
+        type: Boolean,
+        description: 'Enable additional logging verbosity-ness'
+    }
+];
+
+var options = CommandLineArgs(optionDefs);
+var valid = (options.dir && options.pattern && options.schema);
+if (options.help || !valid) {
+    var usage = CommandLineUsage([
+        {
+            header: util.format("Usage: %s [<options>]", APPNAME),
+            content: 'Check a hierarchy of property definition documents against a JSON schema',
+        },
+        {
+            header: 'Options',
+            optionList: optionDefs
+        },
+        {
+            content: 'See also [underline]{https://github.com/whosonfirst/whosonfirst-json-schema} and [underline]{https://github.com/whosonfirst/whosonfirst-properties}'
+        }
+
+    ]);
+    console.log(usage);
+    process.exit(0);
+}
+else {
+    var check = new DocumentCheck(options);
+    check.run();
+}
