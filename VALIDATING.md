@@ -1,10 +1,14 @@
-# Validating Who's On First Documents
+# Validating Who's On First Documents and Property Definitions
 
-This repo contains `wof-validate`, a command line tool to recurse through a directory hierarchy of Who's On First documents and validate them against their JSON schema.
+This repo contains two scripts to validate WOF JSON and GeoJSON files:
+
+* `scripts/wof-validate-docs`, a command line tool to recurse through a directory hierarchy of Who's On First documents (typically the [`whosonfirst-data`](https://github.com/whosonfirst-data/whosonfirst-data) repo) and validate them against a JSON schema.
+
+* `scripts/wof-validate-props`, a command line tool to recurse through a directory hierarchy of property definition files (from the [`whosonfirst-properties`](https://github.com/whosonfirst/whosonfirst-properties) repo) and validate them against a JSON schema.
 
 ## Prerequisites
 
-`wof-validate` is written in [Node.js](https://nodejs.org/en/) so a working Node installation is required. If you're using Homebrew on macOS this is as simple as ...
+Both `wof-validate-docs` and `wof-validate-props` are written in [Node.js](https://nodejs.org/en/) so a working Node installation is required. If you're using Homebrew on macOS this is as simple as ...
 
 ```
 $ brew install node
@@ -14,59 +18,92 @@ For other platforms and installation types, [alternative installs](https://nodej
 
 ## Installation
 
-Either clone a copy of [this repo](https://github.com/whosonfirst/whosonfirst-json-schema) or download [the latest release](https://github.com/whosonfirst/whosonfirst-json-schema/archive/gg-schema-rework.zip) and then use `npm` to install `wof-validate`'s dependencies.
+Either clone a copy of [this repo](https://github.com/whosonfirst/whosonfirst-json-schema) or download [the latest release](https://github.com/whosonfirst/whosonfirst-properties/archive/master.zip) and then use `npm` to install the repo's dependencies.
 
 ```
 $ npm install
 ```
 
-## Command Line Reference
+## Validating WOF GeoJSON Documents
 
-<a name="validate_dir" href="#validate_dir">#</a> `./scripts/wof-validate` <b>`-d`</b> <i>`<dir>`</i>
-<br><a href="#validate_dir">#</a> `./scripts/wof-validate` <b>`--dir`</b> <i>`<dir>`</i>
+### Command Line Reference
+
+<a name="docs_dir" href="#docs_dir">#</a> `./scripts/wof-validate-docs` <b>`-d`</b> <i>`<dir>`</i>
+<br><a href="#docs_dir">#</a> `./scripts/wof-validate-docs` <b>`--dir`</b> <i>`<dir>`</i>
 
 _Required_. Specifies the root of the Who's On First document hierarchy to find GeoJSON documents to validate.
 
-<a name="validate_pattern" href="#validate_pattern">#</a> `./scripts/wof-validate` <b>`-p`</b> <i>`<regex>`</i>
-<br><a href="#validate_pattern">#</a> `./scripts/wof-validate` <b>`--pattern`</b> <i>`<regex>`</i>
+<a name="docs_pattern" href="#docs_pattern">#</a> `./scripts/wof-validate-docs` <b>`-p`</b> <i>`<regex>`</i>
+<br><a href="#docs_pattern">#</a> `./scripts/wof-validate-docs` <b>`--pattern`</b> <i>`<regex>`</i>
 
 _Optional_. Specifies a regular expression to match candidate GeoJSON documents for validation.
 
 The default value is `[0-9]{1,}\.geojson$` which matches _master_ Who's On First document. To match _alternate_ Who's On First documents, a pattern of `[0-9]{1,}-alt-.*\.geojson$` can be used in conjunction with the `--schema` option.
 
-<a name="validate_schema" href="#validate_schema">#</a> `./scripts/wof-validate` <b>`-s`</b> <i>`<file>`</i>
-<br><a href="#validate_schema">#</a> `./scripts/wof-validate` <b>`--schema`</b> <i>`<file>`</i>
+<a name="docs_schema" href="#docs_schema">#</a> `./scripts/wof-validate-docs` <b>`-s`</b> <i>`<file>`</i>
+<br><a href="#docs_schema">#</a> `./scripts/wof-validate-docs` <b>`--schema`</b> <i>`<file>`</i>
 
 _Required_. Path to the top level schema file to use for validation. For _master_ documents, `schema/whosonfirst.json` should be used. For _alternate_ documents `schema/whosonfirst-alt.json` should be used.
 
 See also the `--pattern` option for specifying _alternate_ documents should be validated.
 
-<a name="validate_refs" href="#validate_refs">#</a> `./scripts/wof-validate` <b>`-r`</b> <i>`[files]`</i>
-<br><a href="#validate_refs">#</a> `./scripts/wof-validate` <b>`--references`</b> <i>`[files]`</i>
+<a name="docs_refs" href="#docs_refs">#</a> `./scripts/wof-validate-docs` <b>`-r`</b> <i>`[files]`</i>
+<br><a href="#docs_refs">#</a> `./scripts/wof-validate-docs` <b>`--references`</b> <i>`[files]`</i>
 
 _Required_. Path to one of more schema references, required as dependencies on the top level schema file.
 
-<a name="validate_help" href="#validate_help">#</a> `./scripts/wof-validate` <b>`-h`</b>
-<br><a href="#validate_help">#</a> `./scripts/wof-validate` <b>`--help`</b>
+<a name="docs_help" href="#docs_help">#</a> `./scripts/wof-validate-docs` <b>`-h`</b>
+<br><a href="#docs_help">#</a> `./scripts/wof-validate-docs` <b>`--help`</b>
 
 _Optional_. Displays help text and exits.
 
-<a name="validate_verbose" href="#validate_verbose">#</a> `./scripts/wof-validate` <b>`-v`</b>
-<br><a href="#validate_verbose">#</a> `./scripts/wof-validate` <b>`--verbose`</b>
+<a name="docs_verbose" href="#docs_verbose">#</a> `./scripts/wof-validate-docs` <b>`-v`</b>
+<br><a href="#docs_verbose">#</a> `./scripts/wof-validate-docs` <b>`--verbose`</b>
 
-_Optional_. Increases the verbosity of the output from `wof-validate`. By default, `wof-validate` will report only the first validation error found for a given GeoJSON document. If `--verbose` is supplied, then _all_ errors will be reported.
+_Optional_. Increases the verbosity of the output from `wof-validate-docs`. By default, `wof-validate-docs` will report only the first validation error found for a given GeoJSON document. If `--verbose` is supplied, then _all_ errors will be reported.
 
-## Examples
-
-```
-$ ./scripts/wof-validate --dir /usr/local/data/whosonfirst-data --schema schema/whosonfirst.json --references schema/geojson-*.json --references schema/wof-hierarchy.json
-```
+### Examples
 
 ```
-$ ./scripts/wof-validate --dir /usr/local/data/whosonfirst-data --schema schema/whosonfirst-alt.json --references schema/geojson-*.json --references schema/wof-hierarchy.json --pattern "[0-9]{1,}-alt-.*\.geojson$"
+$ ./scripts/wof-validate-docs --dir /usr/local/data/whosonfirst-data --schema schema/docs/whosonfirst.json --references schema/geojson/geojson-*.json --references schema/docs/wof-*.json
 ```
 
-## Single Document Validation using Ajv
+```
+$ ./scripts/wof-validate-docs --dir /usr/local/data/whosonfirst-data --schema schema/docs/whosonfirst-alt.json --references schema/geojson/geojson-*.json --references schema/docs/wof-*.json --pattern "[0-9]{1,}-alt-.*\.geojson$"
+```
+
+## Validating WOF Property Definitions
+
+### Command Line Reference
+
+<a name="props_dir" href="#props_dir">#</a> `./scripts/wof-validate-props` <b>`-d`</b> <i>`<dir>`</i>
+<br><a href="#props_dir">#</a> `./scripts/wof-validate-props` <b>`--dir`</b> <i>`<dir>`</i>
+
+_Required_. Specifies the root of the property definitions directory hierarchy to find JSON documents to validate. Typically this will be `/path/to/whosonfirst-properties/properties`.
+
+<a name="props_pattern" href="#props_pattern">#</a> `./scripts/wof-validate-props` <b>`-p`</b> <i>`<regex>`</i>
+<br><a href="#props_pattern">#</a> `./scripts/wof-validate-props` <b>`--pattern`</b> <i>`<regex>`</i>
+
+_Optional_. Specifies a regular expression to match candidate property definitions for validation.
+
+The default value is `.*\.json$` which matches _any_ JSON document.
+
+<a name="props_schema" href="#props_schema">#</a> `./scripts/wof-validate-props` <b>`-s`</b> <i>`<file>`</i>
+<br><a href="#props_schema">#</a> `./scripts/wof-validate-props` <b>`--schema`</b> <i>`<file>`</i>
+
+_Required_. Path to the top level schema file to use for validation, `schema/properties/properties.json` should be used.
+
+<a name="props_help" href="#props_help">#</a> `./scripts/wof-validate-props` <b>`-h`</b>
+<br><a href="#props_help">#</a> `./scripts/wof-validate-props` <b>`--help`</b>
+
+_Optional_. Displays help text and exits.
+
+<a name="props_verbose" href="#props_verbose">#</a> `./scripts/wof-validate-props` <b>`-v`</b>
+<br><a href="#props_verbose">#</a> `./scripts/wof-validate-props` <b>`--verbose`</b>
+
+_Optional_. Increases the verbosity of the output from `wof-validate-props`. By default, `wof-validate-props` will report only the first validation error found for a given property definition. If `--verbose` is supplied, then _all_ errors will be reported.
+
+## Single WOF GeoJSON Document Validation using Ajv
 
 ### Dependencies
 
@@ -81,20 +118,20 @@ $ npm install -g ajv-cli
 
 Assuming your current working directory is the root of this repo:
 ```
-$ ajv -d [WOF-DOCUMENT-PATH] -s schema/whosonfirst.json -r "schema/geojson-*.json" -r "schema/wof-*.json" --all-errors
+$ ajv -d [WOF-DOCUMENT-PATH] -s schema/docs/whosonfirst.json -r "schema/geojson/geojson-*.json" -r "schema/docs/wof-*.json" --all-errors
 ```
 
 A sample successful validation might look something like this ...
 
 ```
-$ ajv -d /usr/local/data/whosonfirst-data/data/101/750/367/101750367.geojson -s schema/whosonfirst.json -r "schema/geojson-*.json" -r "schema/wof-*.json" --all-errors
+$ ajv -d /usr/local/data/whosonfirst-data/data/101/750/367/101750367.geojson -s schema/docs/whosonfirst.json -r "schema/geojson/geojson-*.json" -r "schema/docs/wof-*.json" --all-errors
 /usr/local/data/whosonfirst-data/data/101/750/367/101750367.geojson valid
 ```
 
 A sample failed validation might look something like this ...
 
 ```
-$ ajv -d /usr/local/data/whosonfirst-data/data/101/750/551/101750551.geojson -s schema/whosonfirst.json -r "schema/geojson-*.json" -r "schema/wof-*.json" --all-errors
+$ ajv -d /usr/local/data/whosonfirst-data/data/101/750/551/101750551.geojson -s schema/docs/whosonfirst.json -r "schema/geojson/geojson-*.json" -r "schema/docs/wof-*.json" --all-errors
 /usr/local/data/whosonfirst-data/data/101/750/551/101750551.geojson invalid
 [ { keyword: 'type',
     dataPath: '.properties[\'wof:belongsto\'][1]',

@@ -15,7 +15,7 @@
             ]
         },
         "properties": {
-            "$ref": "properties.json#/definitions/properties"
+            "$ref": "wof-properties.json#/definitions/properties"
         },
         "bbox": {
             "$ref": "geojson-bbox.json#/definitions/bbox"

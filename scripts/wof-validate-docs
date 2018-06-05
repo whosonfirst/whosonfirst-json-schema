@@ -9,7 +9,7 @@ const CommandLineUsage = require('command-line-usage');
 
 const DocumentCheck = require('./../lib/whosonfirst/document_check');
 
-const APPNAME = 'wof-validate';
+const APPNAME = 'wof-validate-docs';
 
 const optionDefs = [
     {
@@ -63,7 +63,7 @@ if (options.help || !valid) {
     var usage = CommandLineUsage([
         {
             header: util.format("Usage: %s [<options>]", APPNAME),
-            content: 'Check a hierarchy of WOF documents against a JSON schema and optionally fixes common data type validation errors',
+            content: 'Check a hierarchy of WOF documents against a JSON schema',
         },
         {
             header: 'Options',
