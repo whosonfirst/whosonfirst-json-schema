@@ -35,12 +35,12 @@ In addition to the top level schemas detailed above, this repo also contains the
 
 ## Who's On First Document types
 
-At the time of writing, the [`whosonfirst-data`](https://github.com/whosonfirst-data/whosonfirst-data) repo contains two types of GeoJSON documents :-
+At the time of writing, the [`whosonfirst-data`](https://github.com/whosonfirst-data/whosonfirst-data) repo contains two types of GeoJSON documents:
 
 1. _master_ documents; these contain the canonical definition of a Who's On First place and are named `[WOFID].geojson`. These are validated by the schema contained in `schema/docs/whosonfirst.json`.
 
-2. _alternate_ documents; these contain supporting definitions for a Who's On First place and are named `[WOFID]-alt-*.geojson` (currently `[WOFID]-alt-quattroshapes_pg.geojson` and `[WOFID]-alt-naturalearth.geojson` exist in the `whosonfirst-data` repo). These are validated by the schema contained in `schema/docs/whosonfirst-alt.json`.
-
+2. _alternate documents_; these contain supporting definitions for a Who's On First place and
+are named `[WOFID]-alt-source-function-scope-detail.geojson`. See this [cookbook document](https://github.com/whosonfirst/whosonfirst-cookbook/blob/master/how_to/creating_alt_geometries.md#what-optional-rules-apply-to-alt-geometries) for details on the file naming format.
 
 ## Editing Schema documents
 
